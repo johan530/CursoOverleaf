@@ -1,0 +1,29 @@
+%========= info ===================
+% Esta es una plantilla para reportes de laboratorio
+% Autor: Philip J Fry
+% Licencia: Creative Commons
+% ================================
+
+\documentclass{article} % Declarando clase de documento
+%======= pre-ambulo ==========%
+\usepackage[utf8]{inputenc}
+% \usepackage[backend=biber, style=ieee, sorting=ynt]{biblatex}
+\usepackage[backend=biber, style=ieee]{biblatex}
+
+\addbibresource{referencias.bib}
+
+%====== Datos Generales =========
+\title{Paper        Conferencia}
+\author{Lenin G. Falconi }
+\date{Abril, 2020}
+%======= Documento ==============
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+En \cite{nogueira2017image} se dispone de una revisión sistemática de la literatura. Sin embargo, la propuesta indicada en \cite{dawkins_biology_2016} contradicen lo habitual. El trabajo propuesto por \cite{priandana2018backprop} utiliza el algoritmo de \textit{backpropagation} para controlar un robot de rueda.
+
+\printbibliography[title={Bibliografía}]
+
+\end{document}
