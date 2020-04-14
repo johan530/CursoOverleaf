@@ -1,0 +1,95 @@
+\section{Resultados Experimentales}
+Aqui voy a poner los resultados tabulados de mi experimento. En la Tabla \ref{tab:mis_mediciones} se presentan las mediciones realizadas en el experimento indicado en la Sección.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Medidas Experimentales}
+    \begin{tabular}{|ccc|}
+        \hline
+        \textbf{Presion} & \textbf{Temp} & \textbf{Vol}  \\ \hline
+         2.30   &  24.5 & 34.5 \\
+         7.30   &  64.5 & 24.5 \\
+         8.30   &  14.5 & 24.5 \\ \hline
+    \end{tabular}
+    \label{tab:mis_mediciones}
+\end{table}{}
+
+La Tabla \ref{tab:mis_otras_mediciones} muestra un comportamiento interestante.
+
+\begin{table}[h!]
+\centering
+\caption{Otras Medidas}
+\begin{tabular}{ll|ll}
+\multicolumn{2}{c|}{\textbf{Var1}} & \multicolumn{2}{c}{\textbf{Var2}} \\ \hline
+\textbf{a1}          & 12          & 12              & 45              \\
+\textbf{a2}          & 34          & 65              & 78             
+\end{tabular}
+\label{tab:mis_otras_mediciones}
+\end{table}
+
+En la Tabla \ref{tab:comparacion} se comparan los resultados de los diferentes autores. 
+
+% Autor, Titulo, Resultado
+\begin{table}[h!]
+\centering
+\caption{Comparacion de Resultados}
+\begin{tabular}{ccc}
+\textbf{Autor}    & \textbf{Año}    & \textbf{Resultado} \\ \hline
+    \citeauthor{priandana2018backprop} &    \citeyear{priandana2018backprop} & 0.9                \\
+    \citeauthor{dawkins_biology_2016}  &    \citeyear{dawkins_biology_2016}  & 0.8                \\
+    \citeauthor{nogueira2017image}     &    \citeyear{nogueira2017image}     & 0.7                \\ \hline
+\multicolumn{2}{c}{\textbf{Promedio:}} & 0.8               
+\end{tabular}
+\label{tab:comparacion}
+\end{table}
+
+\subsection{Tabu Paquete}
+\begin{table}[h!]
+    \centering
+    % \scriptsize
+    \caption{Utilización de Paquete Tabu}
+    \label{tab:my_label}
+    \begin{tabu} to \textwidth{X[c] X[2.5, c] X[0.5, c]}
+        \textbf{Autor} & \textbf{Artículo} & \textbf{Resultado}  \\ \firsthline
+        \citeauthor{priandana2018backprop} & \citetitle{priandana2018backprop} & 0.8 \\ \hline
+        \citeauthor{dawkins_biology_2016} & \citetitle{dawkins_biology_2016} & 0.7 \\ \hline
+        \citeauthor{nogueira2017image} & \citetitle{nogueira2017image} & 0.78 \\ \lasthline
+    \end{tabu}
+\end{table}
+
+\section{Leer archivo csv y mostrar como tabla}
+
+A continuación vienen las notas
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{Notas Finales}
+    \label{tab: TL-D1}
+    \pgfplotstabletypeset[
+      multicolumn names, % allows to have multicolumn names
+      col sep=comma, % the seperator in our .csv file
+      display columns/0/.style={
+		column name=Nombre, % name of first column
+		column type={c},string type},  % use siunitx for formatting
+      display columns/1/.style={
+		column name=Fisica,
+		column type={c},string type},
+	display columns/2/.style={
+		column name=Quimica,
+		column type={c},string type},
+	display columns/3/.style={
+		column name=Algoritmos,
+		column type={c},string type},
+      every head row/.style={
+		before row={\toprule}, % have a rule at top
+		after row={
+% 			\si{\ampere} & \si{\volt}\\ % the units seperated by &
+			\midrule} % rule under units
+			},
+		every last row/.style={after row=\bottomrule}, % rule at bottom
+    ]{datoscsv/notas.csv} % filename/path to file
+    % transfer-learning-results-top5_raw_roi_not_augm.csv
+  \end{center}
+\end{table}
+
+

@@ -1,0 +1,87 @@
+%========= info ===================
+% Esta es una plantilla para reportes de laboratorio
+% Autor: Philip J Fry
+% Licencia: Creative Commons
+% ================================
+
+\documentclass[12pt]{report} % Declarando clase de documento
+%======= pre-ambulo ==========%
+\usepackage[utf8]{inputenc}
+% \usepackage[backend=biber, style=ieee, sorting=ynt]{biblatex}
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{referencias.bib}
+
+%==== Generador de Texto Dummy ======
+\usepackage{lipsum}
+%===== Definiendo Idioma Español =======
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+%===== Control de Margenes ======
+\usepackage[a4paper,tmargin=3cm,bmargin=2.5cm,lmargin=3cm, rmargin=2.5cm, bindingoffset=6mm]{geometry}
+%======================================================================================================
+% ======= librery graphicx=========
+\usepackage{graphicx}
+% =================================
+% ===== librerias matematicas ==========
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+%========== Para enlaces ===================
+\usepackage{hyperref}
+% ======== Tabu ==========================
+% to have tabu tables
+\usepackage{tabu}
+\usepackage{booktabs}
+% ========================================
+% ==== para manejar csv =============
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{pgfplotstable}
+% \usepackage{booktabs}
+%====== Datos Generales =========
+\title{Paper                 Conferencia}
+\author{Lenin G. Falconi }
+\date{Abril, 2020}
+%======= Documento ==============
+\begin{document}
+
+\maketitle
+\tableofcontents
+% \addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+
+% \addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+
+% Capitulo 1
+\chapter{Introducción}
+\label{cap:Cap1}
+\input{Capitulos/Capitulo1}
+% Capitulo 2
+\chapter{Rev Literatura}
+\label{cap:Cap2}
+\input{Capitulos/Capitulo2}
+% Capitulo 3
+\chapter{Metodos}
+\label{cap:Cap3}
+\input{Capitulos/Capitulo3}
+
+\chapter{Resultados}
+\label{cap:Cap4}
+\input{Capitulos/Capitulo4}
+
+\chapter{Ecuaciones}
+\label{cap:Cap5}
+\input{Capitulos/Capitulo5}
+
+\chapter{Conclusiones}
+\label{cap:Cap6}
+\input{Capitulos/Capitulo6}
+
+
+
+
+\printbibliography[title={Bibliografía}]
+
+\end{document}
